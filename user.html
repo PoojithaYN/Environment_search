@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar Menu -->
+    <div class="side-menu" id="side-menu">
+        <span id="close-menu">×</span>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login/Signup</a></li>
+            <li><a href="maps.html">Maps</a></li>
+            <li><a href="user.html">You</a></li>
+        </ul>
+    </div>
+
+    <!-- Toggle button for menu -->
+    <div class="menu-toggle" id="toggle-menu">
+        <div></div><div></div><div></div>
+    </div>
+
+    <!-- User Page Content -->
+    <div class="main-content">
+        <h1>User Profile</h1>
+
+        <!-- Stars Section -->
+        <section class="stars-section">
+            <h2>Your Stars</h2>
+            <p>You have earned <strong>5 stars</strong> by contributing valuable environmental information.</p>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <h2>Your Comments</h2>
+            <ul>
+                <li>Comment 1: "This place has seen a lot of deforestation..."</li>
+                <li>Comment 2: "The environmental situation here is improving with government action."</li>
+            </ul>
+        </section>
+
+        <!-- Submission Section -->
+        <section class="submission-section">
+            <h2>Submit Information</h2>
+            <p>Provide information about a place:</p>
+            <form>
+                <label for="place-name">Place Name:</label>
+                <input type="text" id="place-name" name="place-name" required><br><br>
+
+                <label for="details">Details:</label>
+                <textarea id="details" name="details" required></textarea><br><br>
+
+                <label for="photos">Upload Photos:</label>
+                <input type="file" id="photos" name="photos" multiple><br><br>
+
+                <button type="submit">Submit for Review</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>Software Engineering Project - UG2-5: Poojitha, Pranay, Yuvraj, Monika, Neha, Srivally</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar Menu -->
+    <div class="side-menu" id="side-menu">
+        <span id="close-menu">×</span>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login/Signup</a></li>
+            <li><a href="maps.html">Maps</a></li>
+            <li><a href="user.html">You</a></li>
+        </ul>
+    </div>
+
+    <!-- Toggle button for menu -->
+    <div class="menu-toggle" id="toggle-menu">
+        <div></div><div></div><div></div>
+    </div>
+
+    <!-- Map Content -->
+    <div class="main-content">
+        <h1>Interactive World Map</h1>
+
+        <div id="map" style="height: 500px;"></div>
+
+        <script>
+            // Initialize the map
+            var map = L.map('map').setView([20, 0], 2);
+
+            // Load and display tile layers on the map
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            // Add a click event to the map
+            map.on('click', function(e) {
+                var lat = e.latlng.lat;
+                var lng = e.latlng.lng;
+
+                // Create a popup on the clicked location
+                var popup = L.popup()
+                    .setLatLng([lat, lng])
+                    .setContent("Brief environmental review of this location.")
+                    .openOn(map);
+            });
+        </script>
+    </div>
+
+    <footer>
+        <p>Software Engineering Project - UG2-5: Poojitha, Pranay, Yuvraj, Monika, Neha, Srivally</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
